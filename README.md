@@ -1,4 +1,4 @@
-![Pixel art of Mountains with my name](githubBanner.jpg)
+![Pixel art of Mountains with my name](20220901_092354.jpg)
 
 # Hi there 👋
 
