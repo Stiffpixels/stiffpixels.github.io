@@ -12,6 +12,9 @@ some javascript projects. You can also find me on:
 
 All the repos for the projects can be found on this profile itself with the project name(in bold)
 
+<br>
+
+
 <img src="tech-ion.gif" alt="Tech-ion website on mobile" width="50%">
 
 
