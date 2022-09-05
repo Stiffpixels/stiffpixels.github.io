@@ -15,5 +15,5 @@ All the repos for the projects can be found on this profile itself with the proj
 - 👨‍💻 A tech blog called **Tech-ion** with a CMS. Its live [deploy](https://tech-ion.netlify.app).
 
 
-![Tech-ion website on mobile](tech-ion.gif)
+![Tech-ion website on mobile](tech-ion.gif width="50")
 
