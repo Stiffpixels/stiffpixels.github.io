@@ -12,8 +12,6 @@ some javascript projects. You can also find me on:
 
 All the repos for the projects can be found on this profile itself with the project name(in bold)
 
-- 👨‍💻 A tech blog called **Tech-ion** with a CMS. Its live [deploy](https://tech-ion.netlify.app).
-
-
-![Tech-ion website on mobile](tech-ion.gif width="50")
+<img src="tech-ion.gif" alt="Tech-ion website on mobile" width="50%">
+👨‍💻 A tech blog called **Tech-ion** with a CMS. Its live [deploy](https://tech-ion.netlify.app).
 
