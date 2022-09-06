@@ -2,11 +2,15 @@
 
 
 # Hi, I'm Muzammil Saify
+
  I'm most interested in web development and want to become a full stack developer at some point. For now I'm learning static sites and thinking of doing
 some javascript projects. You can also find me on:
 [twitter](https://mobile.twitter.com/Muzzitor), 
 [deviant art](https://www.deviantart.com/muzzitor), 
-[AniList](https://www.anilist.co/user/muzzitor), 
+[AniList](https://www.anilist.co/user/muzzitor).
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Stiffpixels&layout=compact&theme=tokyonight)](https://github.com/Stiffpixels/github-readme-stats)
+<hr>
 
 ## Some of my awesome projects
 
