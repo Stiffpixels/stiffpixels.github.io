@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+        <section class="stiff-term min-h-full">
+            <div id="stiff-term__content">
+                {{ partial  "computer-ascii.html" }}
+            </div>
+            <section id="term-interface" class="flex gap-2 text-xs md:text-base">
+                <span id="term-host" class="text-aqua1 text-xs md:text-base">guest@stiffterm~</span>
+                <input type="text" id="term-input" autofocus class="bg-background inline-block border-none active:outline-none focus:outline-none">
+            </section>
+        </section>
+    {{/* range site.RegularPages */}}
+    <!--<h2 class="text-red-400"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>-->
+    {{/* .Summary */}}
+    {{/* end */}}
+{{ end }}

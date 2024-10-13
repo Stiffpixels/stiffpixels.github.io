@@ -1,0 +1,15 @@
+.help-desc{
+    color: var(--gray1);
+    margin-block: 2em;
+    padding-left: 2em;
+    
+    li{
+        margin-block: 1em;
+    }
+}
+
+.help-desc__title{
+    font-weight:bolder;
+    display:inline-block;
+    width: 8em;
+}

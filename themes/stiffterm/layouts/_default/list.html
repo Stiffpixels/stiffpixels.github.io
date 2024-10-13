@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <div class="flex gap-2 items-baseline justify-start">
+        <i data-lucide="x"></i>
+        <h1 class="text-3xl mb-6 font-bold px-2 py-1 w-fit bg-blue1">{{ .Title }}</h1>
+    </div>
+  {{ .Content }}
+  {{ range .Pages }}
+      {{ partial "projects/card.html" . }}
+  {{ end }}
+{{ end }}
