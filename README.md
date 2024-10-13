@@ -1,4 +1,4 @@
-![Pixel art of Mountains with my name](20220901_092354.jpg)
+![Pixel art of Mountains with my name](static/Desert_Mountains.jpg)
 
 
 # Hi, I'm Muzammil Saify
@@ -19,7 +19,7 @@ All the repos for the projects can be found on this profile itself with the proj
 <br>
 
 
-<img src="tech-ion.gif" alt="Tech-ion website on mobile" width="50%">
+<img src="static/tech-ion.gif" alt="Tech-ion website on mobile" width="50%">
 
 
 👨‍💻 A tech blog called **Tech-ion** with a CMS. Its live [deploy](https://tech-ion.netlify.app)
