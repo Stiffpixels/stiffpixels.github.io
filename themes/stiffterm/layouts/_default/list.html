@@ -1,6 +1,13 @@
 {{ define "main" }}
+    {{ $ctx := dict
+      "vendor" "lucide"
+      "name" "undo-2"
+    }}
+
     <div class="flex gap-2 items-baseline justify-start">
-        <i data-lucide="x"></i>
+        <a href="/" class="text-2xl hover:text-blue1 cursor-pointer">
+            {{ partial "icons/icon" $ctx }}
+        </a>
         <h1 class="text-3xl mb-6 font-bold px-2 py-1 w-fit bg-blue1">{{ .Title }}</h1>
     </div>
   {{ .Content }}

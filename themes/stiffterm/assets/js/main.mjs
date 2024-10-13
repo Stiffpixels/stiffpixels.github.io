@@ -60,7 +60,8 @@ function executeCommand(input) {
             })
         },
         projects: () => {
-            termContent.innerHTML += window.location.href
+            termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
+            window.location.replace(`${window.location.href}/projects`)
             scrollToBottom()
         }
     }
