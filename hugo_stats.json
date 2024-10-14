@@ -49,6 +49,7 @@
       "justify-start",
       "mb-6",
       "md:flex-row",
+      "md:items-center",
       "md:items-end",
       "md:text-base",
       "min-h-full",

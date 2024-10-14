@@ -17,8 +17,7 @@ export const wolfAscii = `
 ⠀⠀⣾⢻⣿⣿⠃⠀⠀⡀⢀⡄⠁⠀⠀⢠⡾ᵇʸ ᵗⁿᵏᵃ⠁
 ⠀⠀⠃⢸⣿⡇⠀⢠⣾⡇⢸⡇⠀⠀⠀⡞
 ⠀⠀⠀⠈⢿⡇⡰⠋⠈⠙⠂⠙⠢
-⠀⠀⠀⠀⠈⢧     
-`;
+⠀⠀⠀⠀⠈⢧`;
 
 export const renderText = async (content, target) => {
     for (const line of content.split("\n")) {
