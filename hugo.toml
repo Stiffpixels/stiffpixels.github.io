@@ -1,4 +1,4 @@
-baseURL = 'https://muzz.dev/'
+baseURL = 'https://stiffpixels.github.io/'
 languageCode = 'en-us'
 title = 'Home'
 theme= 'stiffterm'
