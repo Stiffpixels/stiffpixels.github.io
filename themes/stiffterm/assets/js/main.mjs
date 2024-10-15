@@ -20,7 +20,7 @@ function initialze() {
     })
 
     termInput.addEventListener("keydown", (e) => {
-        if (e.code === "Enter") {
+        if (e.code === "Enter" || e.keyCode === 13) {
             executeCommand(e.target.value.toLowerCase())
         }
     });
@@ -33,6 +33,7 @@ if(termInput && termContent){
 function getCurrentTermInput(command) {
     return document.querySelector("#term-host").outerHTML + ` <span class="text-xs md:text-base">${command}</span>\n`
 }
+
 function scrollToBottom() {
     const main = document.querySelector("main")
     main.scrollTop = main.scrollHeight
