@@ -1,4 +1,13 @@
-<section id='project-{{urlize .LinkTitle}}' class="my-3">
+<section id='project-{{urlize .LinkTitle}}' class="my-8">
+    {{ $image := resources.Get "images/WIP.webp" }}
+
+    {{ with .Resources.GetMatch "featured_image.webp" }}
+        {{$image = . }}
+    {{ end }}
+
+    <a href="{{ .RelPermalink }}">
+        <img src="{{ $image.RelPermalink }}" alt="{{ .LinkTitle }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+    </a>
     <h2 class="text-lg font-bold text-yellow2"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
 </section>
