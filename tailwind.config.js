@@ -5,8 +5,16 @@ module.exports = {
     plugins: [typography],
     theme: {
         extend: {
+            gridTemplateColumns: {
+                basic: "repeat(auto-fill, minmax(300px, 1fr))"
+            },
             colors: {
-                background: "var(--background)",
+                background: {
+                    DEFAULT: "hsl(var(--background))",
+                    transparent: {
+                        sm: "hsl(var(--background)/ 90%)"
+                    }
+                },
                 foregorund: "var(--foreground)",
                 muted: {
                     DEFAULT: "var(--muted)",
@@ -34,7 +42,6 @@ module.exports = {
             borderRadius: {
                 angular: "0 100% 100% 0"
             }
-
         }
     }
 };
