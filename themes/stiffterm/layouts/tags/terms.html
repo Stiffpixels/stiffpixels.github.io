@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{ partial "header.html" . }}
+    <div class="flex gap-2 lg:w-[65%] mx-auto flex-wrap">
+    {{ range .Pages }}
+        {{ partial "tags/termCards.html" . }}
+    {{ end }}
+    </div>
+{{ end }}

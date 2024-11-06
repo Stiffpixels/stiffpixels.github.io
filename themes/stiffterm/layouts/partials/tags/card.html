@@ -1,0 +1,53 @@
+<section id='{{urlize .LinkTitle}}-cards' class="flex flex-col shadow-lg lg:flex-row my-8 rounded-md overflow-hidden bg-muted">
+    {{ $image := resources.Get "images/WIP.webp" }}
+
+    {{ with .Resources.GetMatch "featured_image.webp" }}
+        {{$image = . }}
+    {{ end }}
+
+    <div class="lg:w-[35%] overflow-hidden">
+        <a href="{{ .RelPermalink }}" title="view">
+            <img src="{{ $image.RelPermalink }}" class="transition transform hover:scale-125 active:scale-125 focus:scale-125" alt="{{ .LinkTitle }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+        </a>
+    </div>
+
+    <div class="flex flex-col gap-2 justify-between p-4 md:p-8 lg:w-[65%]">
+        <div>
+            <div class="flex gap-2 justify-between items-center">
+                <h2 class="text-xl font-bold"><a href="{{ .RelPermalink }}" class="transition text-yellow2 hover:text-orange2">{{ .LinkTitle }}</a></h2>
+
+            </div>
+            {{ .Summary }}
+        </div>
+        <div class="flex items-center gap-2">
+                
+            {{ range .Params.Tags }}
+                {{ if eq . "node" }}
+                    {{ $nodejs := dict
+                      "vendor" "fab"
+                      "name" "node-js"
+                    }}
+                    <a href="https://nodejs.org" title="Nodejs Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
+                        {{ partial "icons/icon" $nodejs }}
+                    </a>
+                    {{ continue }}
+                {{ end }}
+                
+                {{ if eq . "react" }}
+                    {{ $react := dict
+                      "vendor" "fab"
+                      "name" "react"
+                    }}
+
+                    <a href="https://react.dev" title="React Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
+                        {{ partial "icons/icon" $react }}
+                    </a>
+                    {{ continue }}
+                {{ end }}
+
+            {{ end }}
+
+        </div>
+    </div>
+</section>
+

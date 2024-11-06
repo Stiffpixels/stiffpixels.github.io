@@ -15,13 +15,20 @@
         <div>
             <div class="flex gap-2 justify-between items-center">
                 <h2 class="text-xl font-bold"><a href="{{ .RelPermalink }}" class="transition text-yellow2 hover:text-orange2">{{ .LinkTitle }}</a></h2>
-                {{ $github := dict
-                  "vendor" "lucide"
-                  "name" "github"
-                }}
-                <a href="#" title="view on github" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
-                    {{ partial "icons/icon" $github }}
-                </a>
+
+                {{ if .Params.Github }}
+                    {{ $github := dict
+                      "vendor" "lucide"
+                      "name" "github"
+                    }}
+                    <a href={{printf "https://github.com/Stiffpixels/%s" .Params.Github}}
+                        title="view on github" target="_blank" 
+                        class="text-3xl hover:text-blue2 cursor-pointer"
+                        target="_blank"
+                        >
+                        {{ partial "icons/icon" $github }}
+                    </a>
+                {{ end }}
             </div>
             {{ .Summary }}
         </div>

@@ -1,0 +1,54 @@
+{{ $color := "foreground" }}
+{{ $icon := "" }}
+{{ $vendor := "fab" }}
+{{ if eq .LinkTitle "Express"}}
+    {{ $color = "orange2"}}
+{{ end }}
+
+{{ if eq .LinkTitle "React"}}
+    {{ $color = "blue2"}}
+    {{ $icon = "react" }}
+{{ end }}
+
+{{ if eq .LinkTitle "Node"}}
+    {{ $color = "green1"}}
+    {{ $icon = "node-js" }}
+{{ end }}
+
+{{ if or (eq .LinkTitle "Postgresql") (eq .LinkTitle "Mongodb")}}
+    {{ $color = "aqua2"}}
+    {{ $icon = "database" }}
+    {{ $vendor = "fas" }}
+{{ end }}
+
+{{ if eq .LinkTitle "Next"}}
+    {{ $color = "slate-400"}}
+{{ end }}
+
+{{ $ctx := ""}}
+
+{{ if $icon }}
+    {{ $ctx = dict
+        "vendor" $vendor
+        "name" $icon
+    }}
+{{ end }}
+
+
+<a href="{{ .RelPermalink }}">
+    <div class="p-4 rounded-md text-{{$color}} bg-muted text-center min-w-80">
+        <div class="text-6xl flex justify-center">
+            <div>
+                {{ if $ctx }}
+                    {{ partial "icons/icon" $ctx }}
+                {{ else }}
+                <p class="uppercase">
+                    {{ slicestr .LinkTitle 0 1 }}
+                </p>
+                {{ end }}
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold">{{ .LinkTitle }}</h2>
+    </div>
+</a>

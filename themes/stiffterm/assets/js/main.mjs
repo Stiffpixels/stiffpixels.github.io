@@ -21,7 +21,7 @@ function initialze() {
 
     termInput.addEventListener("keydown", (e) => {
         if (e.code === "Enter" || e.keyCode === 13) {
-            executeCommand(e.target.value.toLowerCase())
+            executeCommand(e.target.value.toLowerCase().trim())
         }
     });
 }
@@ -62,7 +62,7 @@ function executeCommand(input) {
         },
         projects: () => {
             termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
-            window.location.replace(`${window.location.href}/projects`)
+            window.location.href = `${window.location.href}/projects`
             scrollToBottom()
         }
     }

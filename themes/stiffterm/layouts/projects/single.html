@@ -1,0 +1,53 @@
+{{ define "main" }}
+    {{ partial "header.html" . }}
+    <div class="w-11/12 md:w-1/2 max-w-[1080px] my-4 mx-auto">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+        {{ $image := resources.Get "images/WIP.webp" }}
+
+        {{ with .Resources.GetMatch "featured_image.webp" }}
+            {{$image = . }}
+        {{ end }}
+
+        <img src="{{ $image.RelPermalink }}" class="w-full mb-3" alt="{{ .LinkTitle }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+
+        {{ .Content }}
+
+
+        <section id="tags" class="mt-4">
+            <h3 class="mb-4">Tags: </h3>
+            <div class="flex gap-4">
+                {{ range .Params.Tags }}
+                     {{ if eq . "node" }}
+                        {{ partial "projects/tag.html" (dict "color" "green1" "tag" .) }}
+                        {{ continue }}
+                     {{ end }}
+
+                     {{ if eq . "next" }}
+                        {{ partial "projects/tag.html" (dict "color" "slate-900" "tag" .) }}
+                        {{ continue }}
+                     {{ end }}
+
+                     {{ if eq . "postgresql" }}
+                        {{ partial "projects/tag.html" (dict "color" "blue1" "tag" .) }}
+                        {{ continue }}
+                     {{ end }}
+
+                     {{ if eq . "react" }}
+                        {{ partial "projects/tag.html" (dict "color" "blue1" "tag" .) }}
+                        {{ continue }}
+                     {{ end }}
+
+                     {{ if eq . "express" }}
+                        {{ partial "projects/tag.html" (dict "color" "orange2" "tag" .) }}
+                        {{ continue }}
+                     {{ end }}
+
+                     {{ partial "projects/tag.html" (dict "color" "gray2" "tag" .) }}
+                {{ end }}
+            </div>
+        </section>
+    </div>
+{{ end }}

@@ -30,8 +30,6 @@ module.exports = {
                 green2: "var(--green2)",
                 yellow1: "var(--yellow1)",
                 yellow2: "var(--yellow2)",
-                blue1: "var(--blue1)",
-                blue2: "var(--blue2)",
                 purple1: "var(--purple1)",
                 purple2: "var(--purple2)",
                 aqua1: "var(--aqua1)",
