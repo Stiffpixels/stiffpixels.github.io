@@ -1,0 +1,22 @@
+{{ $color := "black" }}
+{{ if or ( eq . "node" ) (eq . "mongodb") }}
+    {{ $color = "green1" }}
+{{ end }}
+
+{{ if eq . "next" }}
+   {{ $color = "slate-400" }}
+{{ end }}
+
+{{ if eq . "postgresql" }}
+   {{ $color = "blue1" }}
+{{ end }}
+
+{{ if eq . "react" }}
+   {{ $color = "blue1" }}
+{{ end }}
+
+{{ if eq . "express" }}
+   {{ $color = "orange2" }}
+{{ end }}
+
+{{ partial "projects/tag.html" (dict "color" $color "tag" .) }}

@@ -3,6 +3,13 @@
 
     <div class="p-4 lg:w-4/5 md:mx-auto">
 
+        <div class="flex gap-2 justify-center">
+            <h2>Tags:</h2>
+            {{ range .Site.Taxonomies.tags.ByCount }}
+                {{ partial "projects/tags.html" (.Page.LinkTitle | lower) }}
+            {{ end }}
+        </div>
+
       {{ .Content }}
       <div class="grid grid-cols-basic gap-4 lg:gap-0 lg:grid-cols-1">
           {{ range .Pages }}

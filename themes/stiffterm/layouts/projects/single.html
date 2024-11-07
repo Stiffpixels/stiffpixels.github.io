@@ -18,36 +18,12 @@
 
         <section id="tags" class="mt-4">
             <h3 class="mb-4">Tags: </h3>
-            <div class="flex gap-4">
+            <div class="flex gap-4  mb-4">
                 {{ range .Params.Tags }}
-                     {{ if eq . "node" }}
-                        {{ partial "projects/tag.html" (dict "color" "green1" "tag" .) }}
-                        {{ continue }}
-                     {{ end }}
-
-                     {{ if eq . "next" }}
-                        {{ partial "projects/tag.html" (dict "color" "slate-900" "tag" .) }}
-                        {{ continue }}
-                     {{ end }}
-
-                     {{ if eq . "postgresql" }}
-                        {{ partial "projects/tag.html" (dict "color" "blue1" "tag" .) }}
-                        {{ continue }}
-                     {{ end }}
-
-                     {{ if eq . "react" }}
-                        {{ partial "projects/tag.html" (dict "color" "blue1" "tag" .) }}
-                        {{ continue }}
-                     {{ end }}
-
-                     {{ if eq . "express" }}
-                        {{ partial "projects/tag.html" (dict "color" "orange2" "tag" .) }}
-                        {{ continue }}
-                     {{ end }}
-
-                     {{ partial "projects/tag.html" (dict "color" "gray2" "tag" .) }}
+                    {{ partial "projects/tags.html" .}}
                 {{ end }}
             </div>
+            <a href="/tags" class="italic hover:text-blue2 hover:underline">View All</a>
         </section>
     </div>
 {{ end }}
