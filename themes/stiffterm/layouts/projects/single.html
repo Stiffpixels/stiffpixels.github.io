@@ -5,20 +5,40 @@
         {{ $dateHuman := .Date | time.Format ":date_long" }}
         <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-        {{ $image := resources.Get "images/WIP.webp" }}
+        {{ $image := slice (resources.Get "images/WIP.webp") }}
 
-        {{ with .Resources.GetMatch "featured_image.webp" }}
+        {{ with .Resources.ByType "image" }}
             {{$image = . }}
         {{ end }}
 
-        <img src="{{ $image.RelPermalink }}" class="w-full mb-3" alt="{{ .LinkTitle }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+        <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                {{ range $image }}
+                    <div class="swiper-slide">
+                        <img src="{{ .RelPermalink }}" class="w-full mb-3" alt="{{ $.LinkTitle }}" width="{{ .Width }}" height="{{ .Height }}" />
+                    </div>
+                {{ end }}
+
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination pb-4"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev pl-4"></div>
+              <div class="swiper-button-next pr-4"></div>
+
+        </div>
+
 
         {{ .Content }}
 
 
         <section id="tags" class="mt-4">
             <h3 class="mb-4">Tags: </h3>
-            <div class="flex gap-4  mb-4">
+            <div class="flex gap-4  mb-4 flex-wrap">
                 {{ range .Params.Tags }}
                     {{ partial "projects/tags.html" .}}
                 {{ end }}

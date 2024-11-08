@@ -10,6 +10,9 @@ export const helpHTML = `
       <span class="help-desc__title">projects:</span> open a window showcasing all the projects
     </li>
     <li>
+      <span class="help-desc__title">about:</span> go to my about page
+    </li>
+    <li>
       <span class="help-desc__title">banner:</span> display the banner shown when entering the terminal
     </li>
 </ul>

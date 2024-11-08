@@ -1,5 +1,34 @@
 import { bannerHTML, helpHTML } from "./scripts/command-outputs.mjs"
 import { asciBanners, renderText, wolfAscii } from "./scripts/generateBannerUtils.mjs"
+import { Swiper } from './scripts/swiper.mjs'
+
+new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  autoplay:{
+      delay:3000
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+
 
 const termInput = document.querySelector("#term-input")
 const termContent = document.querySelector("#stiff-term__content")
@@ -63,6 +92,11 @@ function executeCommand(input) {
         projects: () => {
             termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
             window.location.href = `${window.location.href}/projects`
+            scrollToBottom()
+        },
+        about: ()=>{
+            termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
+            window.location.href = `${window.location.href}/about`
             scrollToBottom()
         }
     }

@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+
+  <section id="{{ .Title }}" class="w-11/12 md:w-1/2 max-w-[1080px] my-4 mx-auto">
+        {{ $image := resources.Get "images/WIP.webp" }}
+        {{ with resources.Get .Params.Featured_image }}
+            {{$image = . }}
+        {{ end }}
+
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+        <img src="{{ $image.RelPermalink }}" 
+            class="w-full max-h-[540px] object-cover mb-3" 
+            alt="{{ .LinkTitle }}" 
+            width="{{ $image.Width }}" 
+            height="{{ $image.Height }}" />
+      {{ .Content }}
+  </section>
+{{ end }}

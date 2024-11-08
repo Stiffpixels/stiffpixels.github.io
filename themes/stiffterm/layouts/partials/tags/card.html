@@ -6,8 +6,13 @@
     {{ end }}
 
     <div class="lg:w-[35%] overflow-hidden">
-        <a href="{{ .RelPermalink }}" title="view">
-            <img src="{{ $image.RelPermalink }}" class="transition transform hover:scale-125 active:scale-125 focus:scale-125" alt="{{ .LinkTitle }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+        <a href="{{ .RelPermalink }}" class="block h-full w-full" title="view">
+            <img 
+                src="{{ $image.RelPermalink }}" 
+                class="transition transform hover:scale-125 active:scale-125 
+                    focus:scale-125 w-full h-full object-cover object-center"
+                alt="{{ .LinkTitle }}" 
+            />
         </a>
     </div>
 

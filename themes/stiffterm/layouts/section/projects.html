@@ -3,7 +3,7 @@
 
     <div class="p-4 lg:w-4/5 md:mx-auto">
 
-        <div class="flex gap-2 justify-center">
+        <div class="flex gap-2 justify-center flex-wrap">
             <h2>Tags:</h2>
             {{ range .Site.Taxonomies.tags.ByCount }}
                 {{ partial "projects/tags.html" (.Page.LinkTitle | lower) }}

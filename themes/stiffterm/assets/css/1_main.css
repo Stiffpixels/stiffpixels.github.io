@@ -34,6 +34,12 @@
   --aqua2: #8ec07c;
   --orange1: #d65d0e;
   --orange2: #fe8019;
+
+  /*swiper vars*/
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-theme-color: var(--orange2);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
