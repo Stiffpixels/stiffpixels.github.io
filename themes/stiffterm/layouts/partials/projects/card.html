@@ -5,12 +5,13 @@
         {{$image = . }}
     {{ end }}
 
-    <div class="lg:w-[35%] overflow-hidden ">
+    <div class="lg:w-[40%] xl:w-[35%] overflow-hidden ">
         <a href="{{ .RelPermalink }}" title="view">
             <img 
                 src="{{ $image.RelPermalink }}" 
                 class="transition transform hover:scale-125 active:scale-125 
-                    focus:scale-125 aspect-video object-cover object-center"
+                    focus:scale-125 aspect-video object-cover object-center
+                    w-full h-full"
                 alt="{{ .LinkTitle }}" 
                 width="{{$image.Width}}"
                 height="{{$image.Height}}"
@@ -18,7 +19,7 @@
         </a>
     </div>
 
-    <div class="flex flex-col gap-2 justify-between p-4 md:p-8 lg:w-[65%]">
+    <div class="flex flex-col gap-2 justify-between p-4 lg:p-8 lg:w-[60%] xl:w-[65%]">
         <div class="mb-4">
             <div class="flex gap-2 justify-between items-center mb-4">
                 <h2 class="text-xl font-bold"><a href="{{ .RelPermalink }}" class="transition text-yellow2 hover:text-orange2">{{ .LinkTitle }}</a></h2>
@@ -37,7 +38,9 @@
                     </a>
                 {{ end }}
             </div>
-            {{ .Summary }}
+            <div class="text-xs md:text-sm lg:text-base">
+                {{ .Summary }}
+            </div>
         </div>
         <div class="flex items-center gap-2">
                 {{ $nodejs := dict

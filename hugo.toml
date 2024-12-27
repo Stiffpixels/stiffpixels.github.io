@@ -2,6 +2,8 @@ baseURL = 'https://stiffpixels.github.io'
 languageCode = 'en-us'
 title = 'Home'
 theme= 'stiffterm'
+summaryLength = 20
+
 [module]
   [module.hugoVersion]
     extended = false
