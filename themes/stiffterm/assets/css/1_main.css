@@ -2,51 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root .dark{
-  --background: 0 0% 16%;
-  --bg0_h: #1d2021;
-  --bg0_s: #32302f;
-  --bg1: #3c3836;
-  --muted: #504945;
-  --bg3: #665c54;
-  --bg4: #7c6f64;
+@layer base{
+    :root{
+      --background: 0 0% 16%;
+      --bg0_h: #1d2021;
+      --bg0_s: #32302f;
+      --bg1: #3c3836;
+      --muted: #504945;
+      --bg3: #665c54;
+      --bg4: #7c6f64;
 
-  --foreground: var(--fg1);
-  --fg0: #fbf1c7;
-  --fg1: #ebdbb2;
-  --muted-foreground: #d5c4a1;
-  --fg3: #bdae93;
-  --fg4: #a89984;
+      --foreground: var(--fg1);
+      --fg0: #fbf1c7;
+      --fg1: #ebdbb2;
+      --muted-foreground: #d5c4a1;
+      --fg3: #bdae93;
+      --fg4: #a89984;
 
-  --gray1: var(--fg4);
-  --gray2: #928374;
-  --red1: #cc241d;
-  --red2: #fb4934;
-  --green1: #98971a;
-  --green2: #b8bb26;
-  --yellow1: #d79921;
-  --yellow2: #fabd2f;
-  --blue1: #458588;
-  --blue2: #83a598;
-  --purple1: #b16286;
-  --purple2: #d3869b;
-  --aqua1: #689d6a;
-  --aqua2: #8ec07c;
-  --orange1: #d65d0e;
-  --orange2: #fe8019;
+      --gray1: var(--fg4);
+      --gray2: #928374;
+      --red1: #cc241d;
+      --red2: #fb4934;
+      --green1: #98971a;
+      --green2: #b8bb26;
+      --yellow1: #d79921;
+      --yellow2: #fabd2f;
+      --blue1: #458588;
+      --blue2: #83a598;
+      --purple1: #b16286;
+      --purple2: #d3869b;
+      --aqua1: #689d6a;
+      --aqua2: #8ec07c;
+      --orange1: #d65d0e;
+      --orange2: #fe8019;
 
-  /*swiper vars*/
-  --swiper-pagination-bullet-inactive-color: #fff;
-  --swiper-pagination-bullet-inactive-opacity: 0.2;
-  --swiper-pagination-bullet-size: 10px;
-  --swiper-theme-color: var(--orange2);
+      /*swiper vars*/
+      --swiper-pagination-bullet-inactive-color: #fff;
+      --swiper-pagination-bullet-inactive-opacity: 0.2;
+      --swiper-pagination-bullet-size: 10px;
+      --swiper-theme-color: var(--orange2);
+        --swiper-navigation-size: 2em;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+    body {
+      @apply antialiased;
+      font-family: 'Noto Sans Mono', monospace;
+      background: hsl(var(--background));
+      color: var(--foreground);
+    }
+
+    @media only screen and (min-width:48em){
+        :root{
+            --swiper-navigation-size: 3em;
+        }
+    }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
-body {
-  @apply antialiased;
-  font-family: 'Noto Sans Mono', monospace;
-  background: hsl(var(--background));
-  color: var(--foreground);
-}
-
+/*sm	640px	 */
+/*md	768px	 */
+/*lg	1024px	 */
+/*xl	1280px	 */
+/*2xl	1536px	 */

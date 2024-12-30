@@ -43,21 +43,48 @@
             </div>
         </div>
         <div class="flex items-center gap-2">
-                {{ $nodejs := dict
-                  "vendor" "fab"
-                  "name" "node-js"
-                }}
-                {{ $react := dict
-                  "vendor" "fab"
-                  "name" "react"
+            {{ range .Params.Tags }}
+                {{ $name := "not-found" }}
+                {{ $vendor := "fab" }}
+                {{ $href := "#" }}
+
+                {{ if eq . "node" }}
+                    {{ $name = "node-js"}}
+                    {{ $href = "https://nodejs.org" }}
+                {{ end }}
+
+                {{ if or (eq . "mongodb") (eq . "postgresql") }}
+                    {{ $name = "database"}}
+                    {{ $vendor = "lucide" }}
+                    {{ $href = "https://postgresql.org" }}
+                {{ end }}
+                {{ if eq . "mongodb" }}
+                    {{ $href = "https://mongodb.com" }}
+                {{ end }}
+
+
+                {{ if eq . "next" }}
+                    {{ $name = "n" }}
+                    {{ $vendor = "fas" }}
+                    {{ $href = "https://nextjs.org" }}
+                {{ else }}
+                    {{ if eq . "react" }}
+                        {{ $name = "react" }}
+                        {{ $href = "https://react.dev" }}
+                    {{ end }}
+                {{ end }}
+
+                {{ $icon := dict
+                  "vendor" $vendor
+                  "name" $name
                 }}
 
-                <a href="https://nodejs.org" title="Nodejs Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
-                    {{ partial "icons/icon" $nodejs }}
-                </a>
-                <a href="https://react.dev" title="React Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
-                    {{ partial "icons/icon" $react }}
-                </a>
+                {{ if not (eq $name "not-found")  }}
+                    <a href="{{ $href }}" title="{{ . }}" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
+                        {{ partial "icons/icon" $icon }}
+                    </a>
+                {{ end }}
+            {{ end }}
         </div>
     </div>
 </section>

@@ -1,6 +1,10 @@
-github.com/hugomods/icons v0.6.4 h1:SeDMpN2kjc8mbuXfi8zED4IN5IGZmqJdmmUQr9tIpxw=
-github.com/hugomods/icons v0.6.4/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
-github.com/hugomods/icons/vendors/font-awesome v0.6.8 h1:wcqovckhWxcYTkOn4JOp2HljVmus+59AwDP9cAYWiMg=
-github.com/hugomods/icons/vendors/font-awesome v0.6.8/go.mod h1:IwJEJX8eFwDFCcxMjFBIgVWlPTf16yFVk78Rc3RUBjs=
-github.com/hugomods/icons/vendors/lucide v0.3.38 h1:Tgd7ukLN41MSEsYOHJfkHp9Uyn9zH3r8GqC5HycNAk4=
-github.com/hugomods/icons/vendors/lucide v0.3.38/go.mod h1:SE34c2Z0QmYILU9gKRyU++s7Tra8datrpuVQaClX3so=
+github.com/devicons/devicon v2.16.0+incompatible h1:8Fp1OFUZSUwfd7GKWIjWO6bMfjcJ5m7TRr8g+WSg/VE=
+github.com/devicons/devicon v2.16.0+incompatible/go.mod h1:5xWaezLtUi8HXB3mL9CGW0kbX2pJR0/Ser5Y1zJpKpY=
+github.com/hugomods/icons v0.6.6 h1:gGlafcBDRP7sSID+tgLcWdog+s/QBj8DIfU+h9tZj1U=
+github.com/hugomods/icons v0.6.6/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/hugomods/icons/vendors/devicons v0.0.2 h1:iHjrQcRgtlm+G1r98ibw32wcZ25NBdoSb94Q6afv1ac=
+github.com/hugomods/icons/vendors/devicons v0.0.2/go.mod h1:WXbkgtMxTFrGEetPldyvUW9RqhSLyDR0uf1IJg9Cgic=
+github.com/hugomods/icons/vendors/font-awesome v0.6.12 h1:I8ckJFuxr8mD8bJ4NX9NrmnHd3f6XvITuD2ME8a9wXc=
+github.com/hugomods/icons/vendors/font-awesome v0.6.12/go.mod h1:6YBo/5GaNpAocKwnKNWcd9xkliiRJXmwz2mstY5lr9I=
+github.com/hugomods/icons/vendors/lucide v0.3.40 h1:lNaY9NqFgBmSCUzJkw7xlcGUUWwlDy70gDGyKXgsHV8=
+github.com/hugomods/icons/vendors/lucide v0.3.40/go.mod h1:tgIPafbcACqfXEU1fc/TEx+hdKr7m7iDHZEgAKRkDJM=

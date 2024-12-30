@@ -3,30 +3,30 @@ import { asciBanners, renderText, wolfAscii } from "./scripts/generateBannerUtil
 import { Swiper } from './scripts/swiper.mjs'
 
 new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  autoplay:{
-      delay:3000
-  },
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 3000
+    },
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    dynamicBullets: true,
-    clickable: true
-  },
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+    },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
 })
 
 
@@ -55,7 +55,7 @@ function initialze() {
     });
 }
 
-if(termInput && termContent){
+if (termInput && termContent) {
     initialze()
 }
 
@@ -94,7 +94,7 @@ function executeCommand(input) {
             window.location.href = `${window.location.href}/projects`
             scrollToBottom()
         },
-        about: ()=>{
+        about: () => {
             termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
             window.location.href = `${window.location.href}/about`
             scrollToBottom()

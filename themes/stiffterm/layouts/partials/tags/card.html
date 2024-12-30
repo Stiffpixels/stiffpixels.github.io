@@ -27,28 +27,28 @@
         <div class="flex items-center gap-2">
                 
             {{ range .Params.Tags }}
+                {{ $name := "not-found" }}
                 {{ if eq . "node" }}
-                    {{ $nodejs := dict
-                      "vendor" "fab"
-                      "name" "node-js"
-                    }}
-                    <a href="https://nodejs.org" title="Nodejs Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
-                        {{ partial "icons/icon" $nodejs }}
-                    </a>
-                    {{ continue }}
+                    {{ $name = "node-js"}}
                 {{ end }}
                 
                 {{ if eq . "react" }}
-                    {{ $react := dict
-                      "vendor" "fab"
-                      "name" "react"
-                    }}
-
-                    <a href="https://react.dev" title="React Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
-                        {{ partial "icons/icon" $react }}
-                    </a>
-                    {{ continue }}
+                    {{ $name = "react" }}
                 {{ end }}
+
+                {{ if eq . "next" }}
+                    {{ $name = "next" }}
+                {{ end }}
+
+                {{ $icon := dict
+                  "vendor" "fab"
+                  "name" $name
+                }}
+
+
+                <a href="https://react.dev" title="React Docs" target="_blank" class="text-3xl hover:text-blue2 cursor-pointer">
+                    {{ partial "icons/icon" $icon }}
+                </a>
 
             {{ end }}
 
