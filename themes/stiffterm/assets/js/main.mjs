@@ -60,7 +60,7 @@ if (termInput && termContent) {
 }
 
 function getCurrentTermInput(command) {
-    return document.querySelector("#term-host").outerHTML + ` <span class="text-xs md:text-base">${command}</span>\n`
+    return document.querySelector("#term-host").outerHTML + ` <span id="term-input" class="text-xs md:text-base">${command}</span>\n`
 }
 
 function scrollToBottom() {
@@ -90,12 +90,12 @@ function executeCommand(input) {
             })
         },
         projects: () => {
-            termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
+            termContent.innerHTML += "<p class='basic-term-glow text-xs md:text-base'>Redirecting...</p>"
             window.location.href = `${window.location.href}/projects`
             scrollToBottom()
         },
         about: () => {
-            termContent.innerHTML += "<p class='text-xs md:text-base'>Redirecting...</p>"
+            termContent.innerHTML += "<p class='basic-term-glow text-xs md:text-base'>Redirecting...</p>"
             window.location.href = `${window.location.href}/about`
             scrollToBottom()
         }
@@ -103,7 +103,7 @@ function executeCommand(input) {
     if (commands?.[input]) {
         commands[input]()
     } else {
-        termContent.insertAdjacentHTML("beforeend", getCurrentTermInput(input) + "<p class='text-xs md:text-base'>No command found</p>")
+        termContent.insertAdjacentHTML("beforeend", getCurrentTermInput(input) + "<p class='basic-term-glow text-xs md:text-base'>No command found</p>")
     }
     termInput.value = ""
 }

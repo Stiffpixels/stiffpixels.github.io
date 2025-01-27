@@ -31,11 +31,15 @@
     "classes": [
       "active:outline-none",
       "active:scale-125",
+      "asci-wolf",
       "ascii-banner",
+      "ascii-wolf",
       "aspect-square",
       "aspect-video",
       "backdrop-blur-sm",
       "banner-description",
+      "basic-banner-glow",
+      "basic-term-glow",
       "bg-background",
       "bg-background-transparent-sm",
       "bg-blue1",
@@ -44,6 +48,7 @@
       "bg-orange2",
       "bg-slate-400",
       "border-none",
+      "crt",
       "cursor-pointer",
       "flex",
       "flex-col",
@@ -155,7 +160,7 @@
       "z-40"
     ],
     "ids": [
-      "about",
+      "About",
       "authentication",
       "banner",
       "data-editor",

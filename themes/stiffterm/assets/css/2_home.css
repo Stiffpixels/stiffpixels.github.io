@@ -2,7 +2,8 @@
     color: var(--gray1);
     margin-block: 2em;
     padding-left: 2em;
-    
+    text-shadow: 0 0 3px var(--gray1);
+
     li{
         margin-block: 1em;
     }
@@ -12,4 +13,21 @@
     font-weight:bolder;
     display:inline-block;
     width: 8em;
+}
+
+.banner-description{
+    text-shadow: 0 0 3px var(--orange1);
+}
+
+#term-host{
+    text-shadow:0 0 3px var(--aqua1);
+}
+
+#term-input,
+.basic-term-glow{
+    text-shadow:0 0 3px var(--foreground);
+}
+
+.ascii-wolf{
+    text-shadow:0 0 5px var(--blue1);
 }

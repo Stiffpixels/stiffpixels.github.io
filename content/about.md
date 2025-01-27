@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 draft: false
 featured_image: /images/about.png
 ---
@@ -19,9 +19,10 @@ multiple projects using these technologies, In the backend I have used Nodejs wi
 express Nextjs server components. I have also dabbled in Java and Go and have 
 a basic understanding of the languages.
 
-I created **this website** because of the love for terminals I have especially since
-I started using Linux as my primary OS for development along with Neovim as my
-primary text/code editor.
+I developed **this website** because of the love for terminals I have especially since
+I started using Linux as my primary OS for development along with Neovim(btw) as my
+primary text/code editor. Its built using hugo static site generator for that sweet
+sweet high speed performance
 
 I have an average **typing speed** of 60wpm using touch typing that I taught myself.
 I have **graduated** form my Bachelors in Computer Science with 9.8 CGPA
