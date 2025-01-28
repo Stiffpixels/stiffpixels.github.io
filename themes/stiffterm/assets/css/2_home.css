@@ -28,6 +28,10 @@
     text-shadow:0 0 3px var(--foreground);
 }
 
+.basic-term-glow .tag-link:hover{
+    text-shadow:none;
+}
+
 .ascii-wolf{
     text-shadow:0 0 5px var(--blue1);
 }

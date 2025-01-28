@@ -13,3 +13,15 @@
 .project-content p:last-child{
     margin: 0;
 }
+
+.project-tags-view-all{
+    text-shadow:0 0 3px var(--blue1);
+}
+
+.project-card-link{
+    text-shadow:0 0 3px var(--yellow2);
+}
+
+.project-card-link:hover{
+    text-shadow:0 0 3px var(--orange1);
+}
