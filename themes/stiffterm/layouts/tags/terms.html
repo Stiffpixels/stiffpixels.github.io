@@ -1,8 +1,10 @@
 {{ define "main" }}
-    {{ partial "header.html" . }}
-    <div class="flex gap-2 justify-center max-w-5xl mx-auto flex-wrap">
-            {{ range .Pages }}
-                {{ partial "tags/termCards.html" . }}
-            {{ end }}
+    <div class="crt">
+        {{ partial "header.html" . }}
+        <div class="flex gap-2 justify-center max-w-5xl mx-auto flex-wrap">
+                {{ range .Pages }}
+                    {{ partial "tags/termCards.html" . }}
+                {{ end }}
+        </div>
     </div>
 {{ end }}
