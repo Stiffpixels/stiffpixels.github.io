@@ -1,37 +1,13 @@
-import { bannerHTML, helpHTML } from "./scripts/command-outputs.mjs"
+import { bannerHTML, helpHTML, socialsHTML } from "./scripts/command-outputs.mjs"
 import { asciBanners, renderText, wolfAscii } from "./scripts/generateBannerUtils.mjs"
 import { Swiper } from './scripts/swiper.mjs'
 
-new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    autoplay: {
-        delay: 3000
-    },
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        clickable: true,
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-})
-
-
 const termInput = document.querySelector("#term-input")
 const termContent = document.querySelector("#stiff-term__content")
+const termInterface = document.querySelector("#term-interface")
+const socialOptions = {
+    ids: ["linkedin-link", "github-link", "twitter-link"]
+}
 
 function initialze() {
     // always autofocus on the terminal input
@@ -76,11 +52,11 @@ function executeCommand(input) {
             console.log("terminal cleared")
         },
         help: () => {
-            termContent.insertAdjacentHTML("beforeend", getCurrentTermInput("help") + helpHTML)
+            appendHtmlToTerm("help", helpHTML)
             scrollToBottom()
         },
         banner: () => {
-            termContent.insertAdjacentHTML("beforeend", getCurrentTermInput("banner") + bannerHTML)
+            appendHtmlToTerm("banner", bannerHTML)
 
             const asciiBannersLocal = document.querySelectorAll(".ascii-banner")
             renderText(wolfAscii, asciiBannersLocal[asciiBannersLocal.length - 2]).then(() => {
@@ -98,12 +74,103 @@ function executeCommand(input) {
             termContent.innerHTML += "<p class='basic-term-glow text-xs md:text-base'>Redirecting...</p>"
             window.location.href = `${window.location.href}/about`
             scrollToBottom()
+        },
+        socials: () => {
+            appendHtmlToTerm(input, socialsHTML)
+            scrollToBottom()
+            enableVimSelection(socialOptions)
         }
     }
+
     if (commands?.[input]) {
         commands[input]()
     } else {
-        termContent.insertAdjacentHTML("beforeend", getCurrentTermInput(input) + "<p class='basic-term-glow text-xs md:text-base'>No command found</p>")
+        const noCommandHtml = "<p class='basic-term-glow text-xs md:text-base'>No command found</p>"
+        appendHtmlToTerm(input, noCommandHtml)
+        scrollToBottom()
     }
+
     termInput.value = ""
 }
+
+function enableVimSelection(options) {
+    let selectedIndex = 0
+    let optionIds = options.ids
+    highlightSelected(optionIds[selectedIndex])
+
+    termInput.disabled = true
+    termInterface.classList.add("hidden")
+
+    document.addEventListener("keydown", vimCursor)
+
+    function vimCursor(e) {
+        if (e.ctrlKey && e.key === "Enter") {
+            stopVimSelection()
+        }
+
+        if ((e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "j" || e.key === "l") && selectedIndex + 1 === optionIds.length) {
+            highlightSelected("social-link-exit")
+            selectedIndex++
+        }
+
+        if ((e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "j" || e.key === "l") && selectedIndex + 1 < optionIds.length) {
+            highlightSelected(optionIds[++selectedIndex])
+        } else if ((e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "k" || e.key === "h") && selectedIndex - 1 >= 0) {
+            highlightSelected(optionIds[--selectedIndex])
+        }
+
+    }
+
+    function stopVimSelection() {
+        const selectedLink = document.getElementById(options.ids[selectedIndex])
+        if (selectedLink) window.open(selectedLink.href, "_blank").focus()
+
+        termInput.disabled = false
+        termInterface.classList.remove("hidden")
+        termInput.focus()
+        scrollToBottom()
+
+        document.querySelectorAll(".social-link").forEach(link => link.id = "")
+        document.removeEventListener("keydown", vimCursor)
+    }
+}
+
+
+function highlightSelected(id) {
+    document.querySelectorAll(".vim-highlight").forEach(el => el.classList.remove("vim-highlight"))
+
+    const el = document.querySelector("#" + id)
+    el.classList.add("vim-highlight")
+}
+
+function appendHtmlToTerm(command, HTML) {
+    termContent.insertAdjacentHTML("beforeend", getCurrentTermInput(command) + HTML)
+}
+
+new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 3000
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+})
+

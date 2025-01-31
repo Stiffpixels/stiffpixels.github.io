@@ -15,6 +15,9 @@ export const helpHTML = `
     <li>
       <span class="help-desc__title">banner:</span> display the banner shown when entering the terminal
     </li>
+    <li>
+      <span class="help-desc__title">socials:</span> get my social media links
+    </li>
 </ul>
 `
 export const bannerHTML = String.raw`
@@ -39,3 +42,17 @@ Enjoy the vibes!
 </p>
 </section>
 `
+
+export const socialsHTML = String.raw`
+<div class="socials basic-term-glow my-4">
+    <h4 class="socials__help italic">use arrow keys/vim keys to select and ctrl+enter or cmd+enter to confirm</h4>
+    ${generateSocialLink("linkedin-link","https://linkedin.com/in/muzammil-saifi-75584724a", "linkedin" )}
+    ${generateSocialLink("github-link","https://github.com/Stiffpixels", "github" )}
+    ${generateSocialLink("twitter-link","https://x.com/Muzzitor", "twitter" )}
+    <label id="social-link-exit" class="text-xs md:text-sm lg:text-base social-link" >exit</label>
+</div>
+`
+
+function generateSocialLink(id, link, title){
+    return `<a id=${id} href=${link} class="text-xs md:text-sm lg:text-base social-link" target="_blank">${title}</a>`
+}

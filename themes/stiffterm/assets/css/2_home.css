@@ -35,3 +35,13 @@
 .ascii-wolf{
     text-shadow:0 0 5px var(--blue1);
 }
+
+.socials__help{
+    text-shadow:none;
+    margin-bottom: 0.4em;
+}
+
+.vim-highlight{
+    background: var(--foreground);
+    color: hsl(var(--background));
+}
