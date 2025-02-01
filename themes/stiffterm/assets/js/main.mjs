@@ -140,9 +140,9 @@ function enableVimSelection(options) {
     }
 
     function handleSocialLink(e) {
+        selectedIndex = optionIds.length
         if (e.target.id === "social-link-exit") {
             highlightSelected(e.target.id)
-            selectedIndex = optionIds.length
             return stopVimSelection()
         }
 
