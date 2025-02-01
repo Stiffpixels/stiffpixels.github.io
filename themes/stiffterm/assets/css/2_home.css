@@ -37,8 +37,9 @@
 }
 
 .socials__help{
-    text-shadow:none;
     margin-bottom: 0.4em;
+    color: var(--gray1);
+    text-shadow: 0 0 3px var(--gray1);
 }
 
 .vim-highlight{

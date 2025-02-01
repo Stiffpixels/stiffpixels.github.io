@@ -153,6 +153,7 @@
       "transform",
       "transition",
       "uppercase",
+      "vim-highlight",
       "w-11/12",
       "w-fit",
       "w-full",

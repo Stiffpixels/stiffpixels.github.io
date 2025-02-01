@@ -102,6 +102,7 @@ function enableVimSelection(options) {
     termInterface.classList.add("hidden")
 
     document.addEventListener("keydown", vimCursor)
+    document.querySelectorAll(".social-link").forEach(socialLink => socialLink.addEventListener("click", handleSocialLink))
 
     function vimCursor(e) {
         if (e.ctrlKey && e.key === "Enter") {
@@ -118,7 +119,6 @@ function enableVimSelection(options) {
         } else if ((e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "k" || e.key === "h") && selectedIndex - 1 >= 0) {
             highlightSelected(optionIds[--selectedIndex])
         }
-
     }
 
     function stopVimSelection() {
@@ -130,8 +130,25 @@ function enableVimSelection(options) {
         termInput.focus()
         scrollToBottom()
 
-        document.querySelectorAll(".social-link").forEach(link => link.id = "")
+        document.querySelectorAll(".social-link").forEach(link => {
+            link.removeEventListener("click", handleSocialLink)
+            link.id = ""
+            link.classList.remove("social-link")
+        })
+
         document.removeEventListener("keydown", vimCursor)
+    }
+
+    function handleSocialLink(e) {
+        if (e.target.id === "social-link-exit") {
+            highlightSelected(e.target.id)
+            selectedIndex = optionIds.length
+            return stopVimSelection()
+        }
+
+        window.open(e.target.href, '_blank')
+        highlightSelected(e.target.id)
+        stopVimSelection()
     }
 }
 

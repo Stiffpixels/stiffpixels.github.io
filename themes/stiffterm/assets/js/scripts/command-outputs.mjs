@@ -49,10 +49,10 @@ export const socialsHTML = String.raw`
     ${generateSocialLink("linkedin-link","https://linkedin.com/in/muzammil-saifi-75584724a", "linkedin" )}
     ${generateSocialLink("github-link","https://github.com/Stiffpixels", "github" )}
     ${generateSocialLink("twitter-link","https://x.com/Muzzitor", "twitter" )}
-    <label id="social-link-exit" class="text-xs md:text-sm lg:text-base social-link" >exit</label>
+    <label id="social-link-exit" class="text-xs md:text-sm lg:text-base social-link">exit</label>
 </div>
 `
 
 function generateSocialLink(id, link, title){
-    return `<a id=${id} href=${link} class="text-xs md:text-sm lg:text-base social-link" target="_blank">${title}</a>`
+    return `<a id=${id} href='${link}' class="text-xs md:text-sm lg:text-base social-link" target="_blank">${title}</a>`
 }
